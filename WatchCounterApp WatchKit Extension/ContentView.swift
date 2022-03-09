@@ -46,13 +46,12 @@ struct ContentView: View {
             HStack(alignment: .center, spacing: 8){
                 Button {
                     print("clear")
-                    timer.upstream.connect().cancel()
-                    count = 0
                 } label: {
                     Text("Clear")
                         .font(.system(size: 0))
                 }
                 Button {
+                
                     timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                 } label: {
                     Image(systemName: "play.fill")
